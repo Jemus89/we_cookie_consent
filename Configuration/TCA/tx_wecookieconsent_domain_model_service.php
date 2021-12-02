@@ -161,11 +161,10 @@ return [
             ],
             'onChange' => 'reload'
         ],
-        /*
         'name' => [
             'exclude' => true,
             'label' => 'LLL:EXT:we_cookie_consent/Resources/Private/Language/locallang_db.xlf:tx_wecookieconsent_domain_model_service.name.label',
-            'description' => 'LLL:EXT:we_cookie_consent/Resources/Private/Language/locallang_db.xlf:tx_wecookieconsent_domain_model_service.name.description',
+            //'description' => 'LLL:EXT:we_cookie_consent/Resources/Private/Language/locallang_db.xlf:tx_wecookieconsent_domain_model_service.name.description',
             'config' => [
                 'type' => 'input',
                 'size' => 30,
@@ -173,7 +172,6 @@ return [
             ],
             'displayCond' => 'FIELD:provider:=:other',
         ],
-        */
         'title' => [
             'exclude' => true,
             'label' => 'LLL:EXT:we_cookie_consent/Resources/Private/Language/locallang_db.xlf:tx_wecookieconsent_domain_model_service.title.label',
