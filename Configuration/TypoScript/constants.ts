@@ -3,7 +3,7 @@ plugin.tx_wecookieconsent_pi1 {
         # cat=plugin.tx_wecookieconsent_pi1/file; type=string; label=Path to template root (FE)
         templateRootPath >
         # cat=plugin.tx_wecookieconsent_pi1/file; type=string; label=Path to template partials (FE)
-        partialRootPath >
+        partialRootPath =
         # cat=plugin.tx_wecookieconsent_pi1/file; type=string; label=Path to template layouts (FE)
         layoutRootPath >
     }
