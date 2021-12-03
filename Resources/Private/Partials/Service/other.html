@@ -4,7 +4,14 @@
         <f:render partial="Service/{service.name}" section="Header" arguments="{service:service}" optional="1"/>
     </f:if>
     <f:if condition="{service.snippet}">
-        <we:scriptTag snippet="{service.snippet}" name="{service.provider}-{service.uid}"/>
+        <f:if condition="{service.name}">
+            <f:then>
+                <we:scriptTag snippet="{service.snippet}" name="{service.name}"/>
+            </f:then>
+            <f:else>
+                <we:scriptTag snippet="{service.snippet}" name="{service.provider}-{service.uid}"/>
+            </f:else>
+        </f:if>
     </f:if>
 </f:section>
 

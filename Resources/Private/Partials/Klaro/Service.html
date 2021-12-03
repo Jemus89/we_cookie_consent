@@ -6,9 +6,19 @@
 <f:if condition="{service.categories}">
     <we:variable name="purposes"><f:for each="{service.categories}" as="category" iteration="iterator">'{category.title -> f:format.case(mode: 'lower')}'<f:if condition="{iterator.isLast} != 1">, </f:if></f:for></we:variable>
 </f:if>
+
+<f:if condition="{service.provider} == other && {service.name}">
+    <f:then>
+        <f:variable name="dataName">{service.name}</f:variable>
+    </f:then>
+    <f:else>
+        <f:variable name="dataName">{service.provider}-{service.uid}</f:variable>
+    </f:else>
+</f:if>    
+    
 <script type="text/javascript">
     klaroConfig.services.push({
-        name: '<f:format.raw>{service.provider}-{service.uid}</f:format.raw>',
+        name: '<f:format.raw>{dataName}</f:format.raw>',
         title: '<f:format.raw><we:format.escape>{service.title}</we:format.escape></f:format.raw>',
         description: '<f:spaceless><f:format.stripTags><we:format.escape>{service.description}</we:format.escape></f:format.stripTags></f:spaceless>',
         default: {f:if(condition: '{service.required}', then: 'true', else: '{f:if(condition: \'{service.preselected}\', then: \'true\', else: \'false\')}')},

@@ -95,7 +95,7 @@ page {
     525304800 < tt_content.list.20.wecookieconsent_pi1
 
     includeCSS {
-        we_cookie_consent_style = EXT:we_cookie_consent/Resources/Public/Stylesheet/style.css
+        we_cookie_consent_style = {$plugin.tx_wecookieconsent_pi1.settings.styleCss}
     }
 
     //Not compatible with the TYPO3 7 output because of the missing renderAssetsForRequest function. Can be reactivited if support for TYPO3 7 is dropped

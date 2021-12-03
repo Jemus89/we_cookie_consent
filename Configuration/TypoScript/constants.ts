@@ -1,11 +1,11 @@
 plugin.tx_wecookieconsent_pi1 {
     view {
         # cat=plugin.tx_wecookieconsent_pi1/file; type=string; label=Path to template root (FE)
-        templateRootPath >
+        templateRootPath =
         # cat=plugin.tx_wecookieconsent_pi1/file; type=string; label=Path to template partials (FE)
-        partialRootPath >
+        partialRootPath =
         # cat=plugin.tx_wecookieconsent_pi1/file; type=string; label=Path to template layouts (FE)
-        layoutRootPath >
+        layoutRootPath =
     }
 
     persistence {
@@ -14,6 +14,8 @@ plugin.tx_wecookieconsent_pi1 {
     }
 
     settings {
+        # cat=plugin.tx_wecookieconsent_pi1/file; type=string; label=Path to style .css (FE)
+        styleCss = EXT:we_cookie_consent/Resources/Public/Stylesheet/style.css
         klaro {
             # cat=plugin.tx_wecookieconsent_pi1/50_TOGGLE/500; type=boolean; label=Accept all:Enable all services, if the consent is not customized.
             acceptAll = 1
