@@ -17,15 +17,15 @@ return [
             'starttime' => 'starttime',
             'endtime' => 'endtime',
         ],
-        'searchFields' => 'title,regex,description,max_age',
+        'searchFields' => 'title,domain,regex,description,max_age',
         'iconfile' => 'EXT:we_cookie_consent/Resources/Public/Icons/tx_wecookieconsent_domain_model_cookie.svg',
         'hideTable' => true
     ],
     'interface' => [
-        'showRecordFieldList' => 'title, regex, description, max_age, sys_language_uid, l10n_parent, l10n_diffsource, hidden',
+        'showRecordFieldList' => 'title, domain, regex, description, max_age, sys_language_uid, l10n_parent, l10n_diffsource, hidden',
     ],
     'types' => [
-        '1' => ['showitem' => 'title, description, max_age, 
+        '1' => ['showitem' => 'title, domain, description, max_age, 
                 --div--;LLL:EXT:we_cookie_consent/Resources/Private/Language/locallang_db.xlf:tx_wecookieconsent_domain_model_cookie.tab.advanced.label, regex, 
                 --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, hidden, sys_language_uid, l10n_parent, l10n_diffsource, starttime, endtime
             '],
@@ -142,6 +142,16 @@ return [
             ],
         ],
         */
+        'domain' => [
+            'exclude' => true,
+            'label' => 'Domain',
+            'description' => 'Domain',
+            'config' => [
+                'type' => 'input',
+                'size' => 30,
+                'eval' => 'trim',
+            ],
+        ],
         'description' => [
             'exclude' => true,
             'label' => 'LLL:EXT:we_cookie_consent/Resources/Private/Language/locallang_db.xlf:tx_wecookieconsent_domain_model_cookie.description.label',
