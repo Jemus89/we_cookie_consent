@@ -51,6 +51,13 @@ class Cookie extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     protected $maxAge = '';
 
     /**
+     * domain
+     *
+     * @var string
+     */
+    protected $domain = '';
+
+    /**
      * Returns the title
      *
      * @return string title
@@ -132,5 +139,26 @@ class Cookie extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     public function setRegex($regex)
     {
         $this->regex = $regex;
+    }
+
+    /**
+     * Returns the regex
+     *
+     * @return string $regex
+     */
+    public function getDomain()
+    {
+        return $this->domain;
+    }
+
+    /**
+     * Sets the regex
+     *
+     * @param string $domain
+     * @return void
+     */
+    public function setDomain($domain)
+    {
+        $this->domain = $domain;
     }
 }
