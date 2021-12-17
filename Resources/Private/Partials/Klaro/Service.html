@@ -1,6 +1,6 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:we="http://typo3.org/ns/Websedit/WeCookieConsent/ViewHelpers" data-namespace-typo3-fluid="true">
 <f:if condition="{service.cookies}">
-    <we:variable name="cookies"><f:for each="{service.cookies}" as="cookie" iteration="iterator">['{cookie.title}', '/', '']<f:if condition="{iterator.isLast} != 1">, </f:if></f:for></we:variable>
+    <we:variable name="cookies"><f:for each="{service.cookies}" as="cookie" iteration="iterator">['{cookie.title}', '/', '{cookie.domain}']<f:if condition="{iterator.isLast} != 1">, </f:if></f:for></we:variable>
 </f:if>
 <we:variable name="purposes">'unknown'</we:variable>
 <f:if condition="{service.categories}">
@@ -14,8 +14,8 @@
     <f:else>
         <f:variable name="dataName">{service.provider}-{service.uid}</f:variable>
     </f:else>
-</f:if>    
-    
+</f:if>
+
 <script type="text/javascript">
     klaroConfig.services.push({
         name: '<f:format.raw>{dataName}</f:format.raw>',
